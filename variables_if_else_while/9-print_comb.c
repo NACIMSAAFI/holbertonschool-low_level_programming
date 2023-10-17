@@ -10,14 +10,6 @@
  * You are not allowed to use any variable of type `char`.
  * Return: 0
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-/**
- * main -Entry point
- *
- * Return:0
- */
 int main(void)
 {
 int ch;
