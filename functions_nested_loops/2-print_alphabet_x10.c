@@ -2,15 +2,16 @@
 /**
  * print_alphabet_x10 -Fonction that preints alphabet x10
  */
- void print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 char ch;
 int i;
-for(i=0; i<10; i++)
+    for (i=0; i<10; i++)
 {
-for (ch = 'a'; ch <= 'z'; ch++)
+    for (ch = 'a' ; ch <= 'z' ; ch++)
 {
-    _putchar(ch);
+_putchar(ch);
 }
-_putchar('\n');}
+_putchar('\n');
+}
 }
