@@ -7,14 +7,14 @@ all:${OBJ}
 	${CC} ${SRC} -o ${NAME}
 
 clean:
-	${RM} -f ${SRC}
+	${RM} -f *~ ${SRC}
 
 oclean:
 	${RM}-f ${OBJ}
 
 fclean:
-	${RM} -f ${SRC}
-	${RM}-f ${OBJ}
+	${RM} -f *~ ${SRC}
+	${RM}-f  ${OBJ}
 
 re: 
 	${RM} -rf ${OBJ}
