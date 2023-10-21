@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  *print_numbers - Function that cmultiplies two integers.
- * Return: a*b
  */
 void print_numbers(void)
 {
