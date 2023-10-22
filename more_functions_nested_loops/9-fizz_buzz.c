@@ -10,9 +10,9 @@ int main(void)
 
 	for (n = 1; n <= 100; n++)
 	{
-		if (n==1)
+		if (n == 1)
 		{
-		printf ("%d", n);
+			printf("%d", n);
 		}
 		else if (n % 3 == 0 && n % 5 == 0)
 		{
