@@ -24,7 +24,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%d \n", n);
+			printf("%d ", n);
 		}
 	}
 	printf("\n");
