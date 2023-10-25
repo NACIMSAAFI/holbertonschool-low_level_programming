@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  **_strcpy - Function that copies a string from src to dest.
  *Return: A pointer to the destination string.
