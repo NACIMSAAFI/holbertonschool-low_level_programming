@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <string.h>
 /**
  **_strcpy - Function that copies a string from src to dest.
  *Return: A pointer to the destination string.
@@ -8,11 +8,10 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
-
+	unsigned int i ;
 	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
+		*(dest+i)=*(src+i);
 		i++;
 	}
 	return (dest);
