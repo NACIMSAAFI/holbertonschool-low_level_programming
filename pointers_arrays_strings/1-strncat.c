@@ -4,6 +4,7 @@
  *Return: A pointer to the destination string.
  *@src: Source string
  *@dest: Destination string.
+ *@n: bytes numbet from src
  */
 char *_strncat(char *dest, char *src, int n)
 {
