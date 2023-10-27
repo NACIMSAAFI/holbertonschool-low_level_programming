@@ -8,6 +8,9 @@
 char *cap_string(char *str)
 {
 	int i;
+	 if (str[0] >= 97 && str[0] <= 122) {
+        str[0] = str[0] - 32;
+    }
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -17,7 +20,7 @@ char *cap_string(char *str)
 		|| str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"'
 		|| str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{'
 		|| str[i - 1] == '}'))
-
+		
 			str[i] = str[i] - 32;
 	}
 	return (str);
