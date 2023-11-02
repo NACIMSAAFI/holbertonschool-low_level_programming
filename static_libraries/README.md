@@ -1,0 +1,1 @@
+README.md file for static_librarie project.
