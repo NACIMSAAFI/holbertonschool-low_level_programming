@@ -1,5 +1,7 @@
 #include <stdio.h>
-
+/*
+main: function that returns the name of the current file
+*/
 int main(int argc, char *argv[])
 {
 	int i, j;
