@@ -1,7 +1,10 @@
 #include <stdio.h>
-/*
-main: function that returns the name of the current file
-*/
+/**
+ * main - function that print it name.
+ * @argc: int value
+ * @argv: char value
+ * Return: 0.
+ */
 int main(int argc, char *argv[])
 {
 	int i, j;
