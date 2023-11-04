@@ -9,13 +9,14 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b;
+	int a, b, mul;
 
 	(void)argc;
 	{
 		a = atoi(argv[1]);
 		b = atoi(argv[2]);
-		printf("%d\n", a * b);
+		mul= a * b;
+		printf("%d\n", mul);
 	}
 	printf("\n");
 
