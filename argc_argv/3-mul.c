@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * main - function that prints multiplies two numbers.
+ * @argc: int value
+ * @argv: char value
+ * Return: 0 or 1.
+ */
 int main(int argc, char *argv[])
 {
 	int a, b;
@@ -8,7 +13,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("Error\n");
-		return 1;
+		return (1);
 	}
 
 	a = atoi(argv[1]);
@@ -21,7 +26,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("Error\n");
-		return 1;
+		return (1);
 	}
-	return 0;
+	return (0);
 }
