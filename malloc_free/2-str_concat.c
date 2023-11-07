@@ -12,9 +12,7 @@
  * followed by the contents of s2, and null terminated,
  * or NULL if insufficient memory was available.
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 char *str_concat(char *s1, char *s2)
 {
