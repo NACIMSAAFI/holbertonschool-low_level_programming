@@ -12,10 +12,10 @@ void *malloc_checked(unsigned int b)
 {
 	int *array;
 
-	array = (int *)malloc(b * sizeof(int *));
+	array = malloc(b);
 	if (array == NULL)
 	{
-		exit(98);
+		exit (98);
 
 	}
 
