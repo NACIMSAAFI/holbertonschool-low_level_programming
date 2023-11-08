@@ -12,19 +12,10 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	{
-		int *array;
-
-		array = malloc(nmemb);
-		if (array == NULL)
-		{
-			return (NULL);
-		}
-		array = malloc(size);
-		if (array == NULL)
-		{
-			return (NULL);
-		}
+		unsigned int *array;
+	if (nmemb == 0 || size == 0)
+	return (NULL);
+		array = malloc(nmemb*size);
 		return (array);
 	}
-}
+
