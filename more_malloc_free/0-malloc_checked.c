@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
- * alloc_checked - function that allocates memory using malloc.
- * b: dimension 1 of the array
+ * malloc_checked - function that allocates memory using malloc.
+ * @b: dimension 1 of the array
  * Return: NULL on failure,
  * or pointer to the allocated memory.
  */
@@ -12,10 +12,11 @@ void *malloc_checked(unsigned int b)
 {
 	int *array;
 
-	array = malloc(b);
+	array = (int *)malloc(b * sizeof(int *));
 	if (array == NULL)
 	{
 		exit(98);
+
 	}
 
 	return (array);
