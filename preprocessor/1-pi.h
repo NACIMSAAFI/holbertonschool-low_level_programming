@@ -1,4 +1,4 @@
-#ifndef _SAMPLE_HEADER_H_
-#define _SAMPLE_HEADER_H_
+#ifndef _1_PI_H_
+#define _1_PI_H_
 #define PI 3.14159265359
-#endif /* _SAMPLE_HEADER_H_ */
+#endif
