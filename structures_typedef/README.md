@@ -1,0 +1,1 @@
+README.md file to structures and typedef project.
