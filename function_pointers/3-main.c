@@ -29,12 +29,7 @@ int main(int argc, char *argv[])
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	if (strcmp(argv[2], "/") == 0 && num2 == 0)
-	{
-		printf("Error\n");
-		return (100);
-	}
-	if (strcmp(argv[2], "%") == 0 && num2 == 0)
+	if ((strcmp(argv[2], "/") == 0) || (strcmp(argv[2], "%") == 0 && num2 == 0))
 	{
 		printf("Error\n");
 		return (100);
