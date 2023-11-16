@@ -19,8 +19,6 @@ int (*get_op_func(char *s))(int, int)
 		{"/", op_div},
 		{"%", op_mod},
 		{NULL, NULL}};
-	if (s == NULL)
-		return (NULL);
 
 	while (ops[i].op)
 	{
