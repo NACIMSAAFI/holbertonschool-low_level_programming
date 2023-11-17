@@ -6,25 +6,32 @@
  * print_numbers - function that prints numbers, followed by a new line.
  * @separator: the string to be printed between numbers.
  * @n: the number of integers passed to the function.
+ * @...: variable number of integers to be printed.
  *
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-
 	if (separator != NULL && n != 0)
 	{
-		va_list add;
-		unsigned int num = 0, i;
+		unsigned int i, num;
+		va_list args;
 
-		va_start(add, n);
+		va_start(args, n);
 
 		for (i = 0; i < n; i++)
 		{
-			num += va_arg(add, int);
-			printf("%d%s", num, separator);
+			num = va_arg(args, int);
+			printf("%d", num);
+
+			if (i < n - 1)
+			{
+				printf("%s", separator);
+			}
 		}
-		va_end(add);
+
+		va_end(args);
+
+		printf("\n");
 	}
-	printf("\n");
 }
