@@ -4,9 +4,9 @@
 /**
  * sum_them_all - function that returns the sum
  * of all its parameters.
- * @n: const unsigned int parameters.
- * Return: the sum af all function parameters or 0.
-*/
+ * @n: const unsigned int parameter indicating the number of parameters.
+ * Return: the sum of all function parameters or 0.
+ */
 
 int sum_them_all(const unsigned int n, ...)
 {
