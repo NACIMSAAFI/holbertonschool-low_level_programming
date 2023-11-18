@@ -20,7 +20,7 @@ for (i = 0; i < n ; i++)
 char *string = va_arg(vsprint, char*);
 if (string == NULL)
 {
-printf("nil");
+printf("(nil)");
 }
 else
 {
