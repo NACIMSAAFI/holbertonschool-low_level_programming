@@ -57,11 +57,7 @@ fmt f[] = {
 const char *separator = "";
 va_list args;
 va_start(args, format);
-if (format == NULL)
-{
-return;
-}
-while (format[i] != '\0')
+while (format && format[i])
 {
 j = 0;
 while (f[j].spec)
