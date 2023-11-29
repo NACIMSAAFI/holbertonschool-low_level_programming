@@ -1,6 +1,7 @@
-#include "lists.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
  * add_node_end - Adds a new node with a copy of the provided string to the end
@@ -14,16 +15,16 @@
  *
  * Return: A pointer to the newly created node on success, or NULL on failure.
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newNode = malloc(sizeof(list_t));
-	list_t *lastNode = *head;
+	list_t *newNode, *lastNode;
 
-	if (newNode == NULL)
-	{
+	if (head == NULL)
 		return (NULL);
-	}
+
+	newNode = malloc(sizeof(list_t));
+	if (newNode == NULL)
+		return (NULL);
 
 	newNode->str = strdup(str);
 	if (newNode->str == NULL)
@@ -40,11 +41,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
+		lastNode = *head;
 		while (lastNode->next != NULL)
 		{
 			lastNode = lastNode->next;
 		}
-
 		lastNode->next = newNode;
 	}
 
