@@ -7,17 +7,15 @@
  *
  * Return: Pointer to the nth node, or NULL if the node does not exist.
  */
-
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int i;
-	dlistint_t *nthNode = malloc(sizeof(dlistint_t));
-	nthNode = head;
-	if (nthNode != NULL)
-		while (i < index)
-		{
-			nthNode->next = nthNode;
-			i++;
-		}
-	return (nthNode);
+    unsigned int i;
+    dlistint_t *nthNode = head;
+
+    for (i = 0; i < index && nthNode != NULL; i++)
+    {
+        nthNode = nthNode->next;
+    }
+
+    return (nthNode);
 }
