@@ -14,7 +14,7 @@ dlistint_t *nthNode = head;
 
 for (i = 0; i < index && nthNode != NULL; i++)
 {
-    nthNode = nthNode->next;
+nthNode = nthNode->next;
 }
 
 return (nthNode);
