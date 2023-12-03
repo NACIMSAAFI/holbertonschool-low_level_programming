@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * flip_bits - Counts the number of bits needed to convert one number to another.
  * @n: The first unsigned long int number.
@@ -7,7 +8,7 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	return countSetBits(n ^ m);
+	return (countSetBits(n ^ m));
 }
 
 /**
@@ -24,5 +25,5 @@ int countSetBits(int n)
 		count++;
 		n &= (n - 1);
 	}
-	return count;
+	return (count);
 }
