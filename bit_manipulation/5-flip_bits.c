@@ -17,7 +17,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
  *
  * Return: The count of set bits in the given integer.
  */
-int countSetBits(int n)
+unsigned long int countSetBits(unsigned long int n)
 {
 	int count = 0;
 	while (n > 0)
