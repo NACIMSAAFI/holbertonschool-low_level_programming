@@ -1,0 +1,1 @@
+README.md file for Bit manipulation project.
