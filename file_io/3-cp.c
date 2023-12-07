@@ -58,9 +58,12 @@ int main(int argc, char *argv[])
 		close(file_to);
 		print_error_and_exit(98, "Can't read from file %s", argv[1]);
 	}
-
-	close(file_from);
-	close(file_to);
+if (close(file_from) == -1 || close(file_to) == -1) {
+        dprintf(STDERR_FILENO, "Error: Can't close fd %d or %d\n", file_from, file_to);
+        exit(100);
+    }
+    return (0);
+}
 
 	return (0);
 }
