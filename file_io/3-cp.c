@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	if (file_to == -1)
 	{
 		close(file_from);
+		close(file_to);
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
