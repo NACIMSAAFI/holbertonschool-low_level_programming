@@ -22,6 +22,9 @@ void print_error_and_exit(int exit_code, const char *message, const char *filena
  */
 int main(int argc, char *argv[])
 {
+	char buffer[1024];
+	ssize_t bytes_read, bytes_written;
+
 	if (argc != 3)
 	{
 		print_error_and_exit(97, "Usage: %s <file_from> <file_to>", argv[0]);
@@ -31,16 +34,12 @@ int main(int argc, char *argv[])
 	{
 		print_error_and_exit(98, "Can't read from file %s", argv[1]);
 	}
-
 	int file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		close(file_from);
 		print_error_and_exit(99, "Can't write to %s", argv[2]);
 	}
-
-	char buffer[1024];
-	ssize_t bytes_read, bytes_written;
 
 	while ((bytes_read = read(file_from, buffer, sizeof(buffer))) > 0)
 	{
@@ -63,5 +62,5 @@ int main(int argc, char *argv[])
 	close(file_from);
 	close(file_to);
 
-	return 0;
+	return (0);
 }
