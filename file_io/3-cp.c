@@ -18,13 +18,12 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
-	while (bytes_read = read(file_from, buffer, sizeof(buffer))>0){
+	bytes_read = read(file_from, buffer, sizeof(buffer));
 	if (bytes_read == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		close(file_from);
 		exit(98);
-	}
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	bytes_written = write(file_to, buffer, bytes_read);
