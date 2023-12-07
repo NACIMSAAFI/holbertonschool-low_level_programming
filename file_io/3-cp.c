@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	bytes_read = read(file_from, buffer, sizeof(buffer));
 	if (bytes_read == -1)
 	{
-		dprintf("Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(file_from);
 		exit(98);
 	}
