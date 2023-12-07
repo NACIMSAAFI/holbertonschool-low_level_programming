@@ -33,8 +33,7 @@ int main(int argc, char *argv[])
 	if (bytes_read == -1)
 	{
 		close(file_from);
-		close(file_to);
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (close(file_from) == -1)
