@@ -8,7 +8,6 @@
  */
 void print_error_and_exit(int exit_code, const char *message, const char *filename)
 {
-	dprintf(STDERR_FILENO, "Error: ");
 	dprintf(STDERR_FILENO, message, filename);
 	dprintf(STDERR_FILENO, "\n");
 	exit(exit_code);
@@ -33,13 +32,13 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		print_error_and_exit(98, "Can't read from file %s", argv[1]);
+		print_error_and_exit(98, "Error: Can't read from file %s", argv[1]);
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		close(file_from);
-		print_error_and_exit(99, "Can't write to %s", argv[2]);
+		print_error_and_exit(99, "Error: Can't write to %s", argv[2]);
 	}
 
 	while ((bytes_read = read(file_from, buffer, sizeof(buffer))) > 0)
@@ -49,7 +48,7 @@ int main(int argc, char *argv[])
 		{
 			close(file_from);
 			close(file_to);
-			print_error_and_exit(99, "Can't write to %s", argv[2]);
+			print_error_and_exit(99, "Error: Can't write to %s", argv[2]);
 		}
 	}
 
