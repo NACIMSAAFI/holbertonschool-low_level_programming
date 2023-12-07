@@ -65,5 +65,3 @@ if (close(file_from) == -1 || close(file_to) == -1) {
     return (0);
 }
 
-	return (0);
-}
