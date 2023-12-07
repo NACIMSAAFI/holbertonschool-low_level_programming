@@ -24,17 +24,18 @@ int main(int argc, char *argv[])
 {
 	char buffer[1024];
 	ssize_t bytes_read, bytes_written;
+	int file_from, file_to;
 
 	if (argc != 3)
 	{
 		print_error_and_exit(97, "Usage: %s <file_from> <file_to>", argv[0]);
 	}
-	int file_from = open(argv[1], O_RDONLY);
+	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
 		print_error_and_exit(98, "Can't read from file %s", argv[1]);
 	}
-	int file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		close(file_from);
