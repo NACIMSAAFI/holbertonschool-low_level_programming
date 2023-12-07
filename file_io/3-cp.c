@@ -24,17 +24,17 @@ int main(int argc, char *argv[])
 		bytes_written = write(file_to, buffer, bytes_read);
 		if (bytes_written == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			close(file_to);
 			close(file_from);
+			dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
 	if (bytes_read == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(file_from);
 		close(file_to);
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (close(file_from) == -1)
