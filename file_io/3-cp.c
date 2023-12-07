@@ -22,10 +22,6 @@ int main(int argc, char *argv[])
     }
 
     file_from = open(argv[1], O_RDONLY);
-    if (file_from == -1)
-    {
-        return(-1);
-    }
 
     bytes_read = read(file_from, buffer, sizeof(buffer));
     if (bytes_read == -1)
@@ -36,10 +32,6 @@ int main(int argc, char *argv[])
     }
 
     file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-    if (file_to == -1)
-    {
-        return(-1);
-    }
 
     bytes_written = write(file_to, buffer, bytes_read);
     if (bytes_written == -1)
