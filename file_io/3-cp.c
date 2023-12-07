@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to;
 	ssize_t bytes_read, bytes_written;
-	char buffer[10000];
+	char buffer[1028];
 
 	if (argc != 3)
 	{
