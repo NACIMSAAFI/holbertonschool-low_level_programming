@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 	}
 	if (close(file_from) == -1 || close(file_to) == -1)
 	{
-		print_error(100, "Error: Can't close fd %d ", file_from);
+		print_error(100, "Error: Can't close fd %d ", argv[2]);
 	}
 	return (0);
 }
