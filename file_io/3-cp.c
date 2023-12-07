@@ -17,21 +17,23 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	file_from = open(argv[1], O_RDONLY);
-	bytes_read = read(file_from, buffer, sizeof(buffer));
+	while ((bytes_read = read(file_from, buffer, sizeof(buffer))) > 0)
+	{
+		bytes_written = write(file_to, buffer, bytes_read);
+		if (bytes_written == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			close(file_to);
+			exit(99);
+		}
+	}
 	if (bytes_read == -1)
 	{
 		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(file_from);
 		exit(98);
-	}
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	bytes_written = write(file_to, buffer, bytes_read);
-	if (bytes_written == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		close(file_to);
-		exit(99);
 	}
 	if (close(file_from) == -1)
 	{
