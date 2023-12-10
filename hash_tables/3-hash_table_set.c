@@ -7,11 +7,7 @@
  * @key: The key (string) associated with the value.
  * @value: The value (string) to be stored.
  *
- * Return:
- *   -  0: Success
- *   - -1: Memory allocation failure
- *   - -2: Key already exists in the hash table
- *   - -3: Invalid arguments (hash table, key, or value is NULL)
+ * Return: 0.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -21,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || value == NULL)
 	{
-		return (-3);
+		return (0);
 	}
 
 	index = key_index((unsigned char *)key, ht->size);
@@ -29,13 +25,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	current_node = lookup_data_string_(ht, key);
 	if (current_node != NULL)
 	{
-		return (-2);
+		return (0);
 	}
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 	{
-		return (-1);
+		return (0);
 	}
 
 	new_node->key = strdup(key);
