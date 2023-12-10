@@ -7,7 +7,7 @@
  * @key: The key (string) associated with the value.
  * @value: The value (string) to be stored.
  *
- * Return: 0.
+ * Return: 0 or 1.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || value == NULL)
 	{
-		return (0);
+		return (1);
 	}
 
 	index = key_index((unsigned char *)key, ht->size);
