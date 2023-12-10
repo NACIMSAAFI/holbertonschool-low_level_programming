@@ -25,13 +25,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	current_node = lookup_data_string_(ht, key);
 	if (current_node != NULL)
 	{
-		ht->array[index]->key = strdup(key);
+		new_node = ht->array[index];
+			ht->array[index] = malloc(sizeof(hash_node_t));
+			if (ht->array[index] == NULL)
+				return (0);
+			ht->array[index]->key = strdup(key);
 			ht->array[index]->value = strdup(value);
 			ht->array[index]->next = new_node;
-        if (current_node->value == NULL)
-        {
-            return (0);
-        }
 	}
 
 	new_node = malloc(sizeof(hash_node_t));
