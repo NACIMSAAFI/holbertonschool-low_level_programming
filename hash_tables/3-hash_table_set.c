@@ -15,7 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node = NULL;
 	hash_node_t *current_node = NULL;
 
-	if (ht == NULL || !strcmp(key, ""))
+	if (ht == NULL || key == NULL || value == NULL)
 	{
 		return (0);
 	}
@@ -25,7 +25,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	current_node = lookup_data_string_(ht, key);
 	if (current_node != NULL)
 	{
-		return (0);
+		free(current_node->value);
+        current_node->value = strdup(value);
+        if (current_node->value == NULL)
+        {
+            return (0);
+        }
 	}
 
 	new_node = malloc(sizeof(hash_node_t));
